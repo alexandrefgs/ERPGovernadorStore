@@ -11,10 +11,12 @@ The ERP Governador Store is a comprehensive and powerful Enterprise Resource Pla
 
 ## Funcionalidades Principais(PT-BR)
 - Controle de Estoque: Gerenciamento abrangente do estoque, controle de inventário, alertas de estoque baixo e reabastecimento automatizado.
+  
 *Outros módulos de operação estão sendo desenvolvidos e serão disponibilizados futuramente.*
 
 ## Key Features(EN)
 - Inventory Control: Comprehensive stock management, inventory tracking, low-stock alerts, and automated restocking.
+  
 *Other operational modules are under development and will be available in the future.*
 
 ## Tecnologias Utilizadas(PT-BR)
