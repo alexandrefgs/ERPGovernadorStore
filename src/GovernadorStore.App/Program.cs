@@ -1,5 +1,7 @@
 using GovernadorStore.App.Data;
+using GovernadorStore.Business.Interfaces;
 using GovernadorStore.Data.Context;
+using GovernadorStore.Data.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +21,11 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<GovernadorStoreDbContext>();
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+builder.Services.AddScoped<IEnderecoRepository, EnderecoRepository>();
 
 var app = builder.Build();
 
