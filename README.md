@@ -1,25 +1,25 @@
 # ERP Governador Store
 
-## Descrição do Projeto(PT-BR)
+## Descrição do Projeto (PT-BR)
 O ERP Governador Store é um Sistema de Gestão Empresarial (ERP) completo e poderoso, desenvolvido utilizando a plataforma .NET 7 com Razor Pages e Entity Framework.
 Ele foi projetado para atender às necessidades de empresas de todos os tamanhos e segmentos.
 O sistema fornece uma solução centralizada para gerenciar as operações diárias, incluindo controle de estoque, faturamento, finanças, recursos humanos e muito mais.
 Além disso, possui integração com a API dos correios para busca de CEPs, o que facilita a gestão logística.
 
-## Project Description(EN)
+## Project Description (EN)
 The ERP Governador Store is a comprehensive and powerful Enterprise Resource Planning (ERP) system, developed using .NET 7 with Razor Pages, Entity Framework, and Angular. It is designed to meet the needs of companies of all sizes and industries. The system provides a centralized solution to manage daily operations, including inventory control, billing, finance, human resources, and more. Additionally, it features integration with the Correios API for ZIP code lookup, facilitating logistics management.
 
-## Funcionalidades Principais(PT-BR)
+## Funcionalidades Principais (PT-BR)
 - Controle de Estoque: Gerenciamento abrangente do estoque, controle de inventário, alertas de estoque baixo e reabastecimento automatizado.
   
 *Outros módulos de operação estão sendo desenvolvidos e serão disponibilizados futuramente.*
 
-## Key Features(EN)
+## Key Features (EN)
 - Inventory Control: Comprehensive stock management, inventory tracking, low-stock alerts, and automated restocking.
   
 *Other operational modules are under development and will be available in the future.*
 
-## Tecnologias Utilizadas(PT-BR)
+## Tecnologias Utilizadas (PT-BR)
 - .NET 7: Plataforma de desenvolvimento utilizada para criar o sistema ERP Governador Store.
 - Entity Framework: Framework ORM (Object-Relational Mapping) que facilita o acesso e manipulação de dados no banco de dados.
 - Razor Pages: Abordagem de programação web baseada em páginas que facilita o desenvolvimento de interfaces de usuário.
@@ -27,7 +27,7 @@ The ERP Governador Store is a comprehensive and powerful Enterprise Resource Pla
 - SQL Server: Sistema de gerenciamento de banco de dados utilizado para armazenar os dados do ERP.
 - Integração com API dos Correios: Utilizada para obter informações de CEPs e facilitar a gestão logística.
 
-## Technologies Used(EN)
+## Technologies Used (EN)
 - .NET 7: The development platform used to build the ERP Governador Store.
 - Entity Framework: Object-Relational Mapping (ORM) framework that simplifies data access and manipulation in the database.
 - Razor Pages: Web programming approach based on pages, making it easy to develop user interfaces.
@@ -35,7 +35,7 @@ The ERP Governador Store is a comprehensive and powerful Enterprise Resource Pla
 - SQL Server: Database management system used to store ERP data.
 - Integration with Correios API: Used to retrieve ZIP code information and streamline logistics management.
 
-## Instalação e Configuração(PT-BR)
+## Instalação e Configuração (PT-BR)
 Para executar o ERP Governador Store em sua máquina local, siga os passos abaixo:
 1. Faça um clone deste repositório para o seu ambiente de desenvolvimento: `git clone https://github.com/alexandrefgs/ERPGovernadorStore`
 2. Navegue até o diretório do projeto: `cd erp-governador-store`
@@ -45,7 +45,7 @@ Para executar o ERP Governador Store em sua máquina local, siga os passos abaix
 6. Inicie o servidor: `dotnet run`
 7. Acesse o sistema através do seu navegador utilizando o seguinte endereço: `http://localhost:5000` (ou outra porta, se especificada).
 
-## Installation and Configuration(EN)
+## Installation and Configuration (EN)
 To run the ERP Governador Store on your local machine, follow these steps:
 1. Clone this repository to your development environment: `git clone https://github.com/alexandrefgs/ERPGovernadorStore`
 2. Navigate to the project directory: `cd erp-governador-store`
@@ -57,7 +57,7 @@ To run the ERP Governador Store on your local machine, follow these steps:
 8. In another terminal window, start the Angular server: `ng serve`
 9. Access the ERP through your browser using the following address: `http://localhost:4200` (or another port, if specified).
 
-## Contribuição(PT-BR)
+## Contribuição (PT-BR)
 Agradecemos muito o seu interesse em contribuir para o ERP Governador Store. Se você deseja colaborar com código, correções de bugs ou novas funcionalidades, siga as orientações abaixo:
 1. Crie um fork deste repositório.
 2. Crie uma branch para a sua feature ou correção: `git checkout -b minha-feature`.
@@ -65,7 +65,7 @@ Agradecemos muito o seu interesse em contribuir para o ERP Governador Store. Se 
 4. Envie as alterações para o seu fork: `git push origin minha-feature`.
 5. Crie um novo pull request, descrevendo detalhadamente as alterações propostas.
 
-## Contribution(EN)
+## Contribution (EN)
 We greatly appreciate your interest in contributing to the ERP Governador Store. If you would like to collaborate with code, bug fixes, or new features, follow these guidelines:
 1. Fork this repository.
 2. Create a branch for your feature or fix: `git checkout -b my-feature`.
@@ -74,12 +74,12 @@ We greatly appreciate your interest in contributing to the ERP Governador Store.
 5. Create a new pull request, providing detailed information about the proposed changes.
 
 
-## Contato(PT-BR)
+## Contato (PT-BR)
 Se você tiver alguma dúvida, sugestão ou precisar de suporte, entre em contato comigo:
 - Nome: Alexandre dos Santos Fagundes
 - E-mail: alexandrefagundes2014@hotmail.com
 
-## Contact(EN)
+## Contact (EN)
 If you have any questions, suggestions, or need support, feel free to contact me:
 - Name: Alexandre dos Santos Fagundes
 - Email: alexandrefagundes2014@hotmail.com
