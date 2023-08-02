@@ -25,7 +25,7 @@ Além disso, possui integração com a API dos correios para busca de CEPs, o qu
 
 Para executar o ERP Governador Store em sua máquina local, siga os passos abaixo:
 
-1. Faça um clone deste repositório para o seu ambiente de desenvolvimento: `git clone https://github.com/alexandrefgs/MinhaAppMvcCompleta.git`
+1. Faça um clone deste repositório para o seu ambiente de desenvolvimento: `git clone https://github.com/alexandrefgs/ERPGovernadorStore`
 2. Navegue até o diretório do projeto: `cd erp-governador-store`
 3. Instale as dependências utilizando o gerenciador de pacotes (por exemplo, dotnet CLI): `dotnet restore`
 4. Configure a conexão com o banco de dados SQL Server no arquivo `appsettings.json`.
