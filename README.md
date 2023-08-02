@@ -23,6 +23,7 @@ The ERP Governador Store is a comprehensive and powerful Enterprise Resource Pla
 - .NET 7: Plataforma de desenvolvimento utilizada para criar o sistema ERP Governador Store.
 - Entity Framework: Framework ORM (Object-Relational Mapping) que facilita o acesso e manipulação de dados no banco de dados.
 - Razor Pages: Abordagem de programação web baseada em páginas que facilita o desenvolvimento de interfaces de usuário.
+- Angular: Framework JavaScript para construção de interfaces de usuário, utilizado para criar a interface do ERP.
 - SQL Server: Sistema de gerenciamento de banco de dados utilizado para armazenar os dados do ERP.
 - Integração com API dos Correios: Utilizada para obter informações de CEPs e facilitar a gestão logística.
 
