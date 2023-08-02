@@ -45,7 +45,7 @@ Agradecemos muito o seu interesse em contribuir para o ERP Governador Store. Se 
 
 ## Contato
 
-Se você tiver alguma dúvida, sugestão ou precisar de suporte, entre em contato com a equipe do projeto:
+Se você tiver alguma dúvida, sugestão ou precisar de suporte, entre em contato comigo:
 
 - Nome: Alexandre dos Santos Fagundes
 - E-mail: alexandrefagundes2014@hotmail.com
