@@ -10,5 +10,6 @@ namespace GovernadorStore.App.Data
             : base(options)
         {
         }    
+        public DbSet<GovernadorStore.App.ViewModels.EnderecoViewModel> EnderecoViewModel { get; set; }
     }
 }
