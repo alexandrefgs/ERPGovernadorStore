@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using GovernadorStore.App.Extensions;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace GovernadorStore.App.ViewModels
@@ -30,6 +31,7 @@ namespace GovernadorStore.App.ViewModels
 
         public string Imagem { get; set; }
 
+        [Moeda]
         [DisplayName("Valor de Venda")]
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         public Decimal ValorVenda { get; set; }
