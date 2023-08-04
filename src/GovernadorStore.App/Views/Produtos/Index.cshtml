@@ -28,6 +28,9 @@
                 @Html.DisplayNameFor(model => model.ValorVenda)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.QuantidadeEstoque)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Ativo)
             </th>
             <th></th>
@@ -38,7 +41,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Imagem)
+                    <img src="~/imagens/produtos/@item.Imagem" alt="@item.Imagem" style="width: 70px; height: 100px"/>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Fornecedor.RazaoSocial)
@@ -50,7 +53,10 @@
                     @Html.DisplayFor(modelItem => item.Categoria)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ValorVenda)
+                    @item.ValorVenda.ToString("C")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantidadeEstoque)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Ativo)

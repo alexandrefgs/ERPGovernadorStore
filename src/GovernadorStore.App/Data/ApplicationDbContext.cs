@@ -9,7 +9,6 @@ namespace GovernadorStore.App.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-        }
-        public DbSet<GovernadorStore.App.ViewModels.EnderecoViewModel> EnderecoViewModel { get; set; }
+        }    
     }
 }

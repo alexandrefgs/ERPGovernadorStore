@@ -34,11 +34,12 @@ namespace GovernadorStore.App.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         public Decimal ValorVenda { get; set; }
 
+        [DisplayName("Quantidade em Estoque")]
         [ScaffoldColumn(false)]
         public string QuantidadeEstoque { get; set; }
 
         [DisplayName("Ativo?")]
-        public string Ativo { get; set; }
+        public bool Ativo { get; set; }
 
         /*EF Relation*/
 

@@ -1,12 +1,15 @@
 ﻿using GovernadorStore.Business.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace GovernadorStore.Data.Context
 {
     public class GovernadorStoreDbContext: DbContext
     {
-        public GovernadorStoreDbContext(DbContextOptions options) : base(options) { }
+        public GovernadorStoreDbContext(DbContextOptions options) : base(options) 
+        {
+            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+            ChangeTracker.AutoDetectChangesEnabled = false;
+        }
 
         //Mapeando as entidades
         public DbSet<Produto> Produtos { get; set; }

@@ -21,4 +21,8 @@
     <ProjectReference Include="..\GovernadorStore.Data\GovernadorStore.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\imagens\produtos\" />
+  </ItemGroup>
+
 </Project>

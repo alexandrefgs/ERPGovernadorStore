@@ -7,7 +7,7 @@
 <h3 style="padding-top: 50px">@ViewData["Title"]</h3>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-10">
         <form enctype="multipart/form-data" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -24,15 +24,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
+                <textarea cols="40" rows="5" asp-for="Descricao" class="form-control"></textarea>
                 <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div><br />
-            <label asp-for="Categoria" class="control-label"></label>
-            <select class="form-select">
-                <option selected>Escolha uma categoria</option>
-                <option asp-for="Categoria" value="Outros" >Outros</option>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+                <input asp-for="Categoria" class="form-control" />
                 <span asp-validation-for="Categoria" class="text-danger"></span>
-            </select><br>
+            </div>
             <div class="form-group">
                 <label asp-for="ImagemUpload" class="control-label"></label>
                 
@@ -47,6 +46,11 @@
                 <label asp-for="ValorVenda" class="control-label"></label>
                 <input asp-for="ValorVenda" class="form-control" />
                 <span asp-validation-for="ValorVenda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuantidadeEstoque" class="control-label"></label>
+                <input asp-for="QuantidadeEstoque" class="form-control" />
+                <span asp-validation-for="QuantidadeEstoque" class="text-danger"></span>
             </div><br />
             <div class="mb-3 form-check">
                <label class="form-check-label">

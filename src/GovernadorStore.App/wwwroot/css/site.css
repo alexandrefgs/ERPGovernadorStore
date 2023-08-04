@@ -28,3 +28,10 @@ body {
     color: #caced1 !important;
     text-decoration: none;
 }
+
+input,
+select,
+file,
+textarea{
+    max-width: 400px;
+}

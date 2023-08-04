@@ -10,7 +10,7 @@ namespace GovernadorStore.Business.Models
         public string Imagem { get; set; }
         public Decimal ValorVenda { get; set; }
         public string QuantidadeEstoque { get; set; }
-        public string Ativo { get; set; }
+        public bool Ativo { get; set; }
 
         /*EF Relation*/
 
