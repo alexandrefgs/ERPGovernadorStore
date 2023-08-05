@@ -37,7 +37,6 @@ namespace GovernadorStore.App.ViewModels
         public Decimal ValorVenda { get; set; }
 
         [DisplayName("Quantidade em Estoque")]
-        [ScaffoldColumn(false)]
         public string QuantidadeEstoque { get; set; }
 
         [DisplayName("Ativo?")]

@@ -107,7 +107,7 @@ namespace GovernadorStore.App.Controllers
             produtoAtualizacao.ValorVenda = produtoViewModel.ValorVenda;
             produtoAtualizacao.Ativo = produtoViewModel.Ativo;
 
-            await _produtoRepository.Atualizar(_mapper.Map<Produto>(produtoViewModel));
+            await _produtoRepository.Atualizar(_mapper.Map<Produto>(produtoAtualizacao));
             return RedirectToAction("Index");
             
         }

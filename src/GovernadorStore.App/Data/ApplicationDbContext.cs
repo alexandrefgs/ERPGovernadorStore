@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using GovernadorStore.App.ViewModels;
 
 namespace GovernadorStore.App.Data
 {
@@ -10,6 +9,5 @@ namespace GovernadorStore.App.Data
             : base(options)
         {
         }    
-        public DbSet<GovernadorStore.App.ViewModels.EnderecoViewModel> EnderecoViewModel { get; set; }
     }
 }
