@@ -41,7 +41,6 @@ namespace GovernadorStore.Data.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Complemento")
-                        .IsRequired()
                         .HasColumnType("varchar(250)");
 
                     b.Property<string>("Estado")
@@ -98,9 +97,8 @@ namespace GovernadorStore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Ativo")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Categoria")
                         .IsRequired()
@@ -122,7 +120,6 @@ namespace GovernadorStore.Data.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("QuantidadeEstoque")
-                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.Property<decimal>("ValorVenda")
@@ -140,6 +137,7 @@ namespace GovernadorStore.Data.Migrations
                     b.HasOne("GovernadorStore.Business.Models.Fornecedor", "Fornecedor")
                         .WithOne("Endereco")
                         .HasForeignKey("GovernadorStore.Business.Models.Endereco", "FornecedorId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.Navigation("Fornecedor");
@@ -150,6 +148,7 @@ namespace GovernadorStore.Data.Migrations
                     b.HasOne("GovernadorStore.Business.Models.Fornecedor", "Fornecedor")
                         .WithMany("Produtos")
                         .HasForeignKey("FornecedorId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.Navigation("Fornecedor");
@@ -157,8 +156,7 @@ namespace GovernadorStore.Data.Migrations
 
             modelBuilder.Entity("GovernadorStore.Business.Models.Fornecedor", b =>
                 {
-                    b.Navigation("Endereco")
-                        .IsRequired();
+                    b.Navigation("Endereco");
 
                     b.Navigation("Produtos");
                 });

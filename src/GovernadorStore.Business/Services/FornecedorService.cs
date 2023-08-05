@@ -56,6 +56,13 @@ namespace GovernadorStore.Business.Services
                 return;
             }
 
+            var endereco = await _enderecoRepository.ObterEnderecoPorFornecedor(id);
+
+            if (endereco != null)
+            {
+                await _enderecoRepository.Remover(endereco.Id);
+            }
+
             await _fornecedorRepository.Remover(id);
         }
 
