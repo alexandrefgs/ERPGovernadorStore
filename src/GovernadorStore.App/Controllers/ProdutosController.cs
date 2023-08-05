@@ -6,6 +6,7 @@ using GovernadorStore.Business.Models;
 
 namespace GovernadorStore.App.Controllers
 {
+    [Route("produtos")]
     public class ProdutosController : BaseController
     {
         private readonly IProdutoRepository _produtoRepository;
@@ -21,11 +22,13 @@ namespace GovernadorStore.App.Controllers
             _mapper = mapper;
         }
 
+        [Route("lista-de-produtos")]
         public async Task<IActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores()));
         }
 
+        [Route("dados-do-produtos/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -38,12 +41,14 @@ namespace GovernadorStore.App.Controllers
             return View(produtoViewModel);
         }
 
+        [Route("novo-produtos")]
         public async Task<IActionResult> Create()
         {
             var produtoViewModel = await PopularFornecedores(new ProdutoViewModel());
             return View(produtoViewModel);
         }
 
+        [Route("novo-produtos")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProdutoViewModel produtoViewModel)
@@ -62,6 +67,7 @@ namespace GovernadorStore.App.Controllers
             return RedirectToAction("Index");
         }
 
+        [Route("editar-produtos/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -73,6 +79,7 @@ namespace GovernadorStore.App.Controllers
             return View(produtoViewModel);
         }
 
+        [Route("editar-produtos/{id:guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, ProdutoViewModel produtoViewModel)
@@ -105,6 +112,7 @@ namespace GovernadorStore.App.Controllers
             
         }
 
+        [Route("excluir-produtos/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var produto = await ObterProduto(id);
@@ -117,6 +125,7 @@ namespace GovernadorStore.App.Controllers
             return View(produto);
         }
 
+        [Route("excluir-produtos/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
