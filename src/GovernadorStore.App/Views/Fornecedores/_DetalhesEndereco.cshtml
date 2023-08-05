@@ -58,10 +58,16 @@
                         @Html.DisplayFor(model => model.Endereco.Estado)
                     </td>
                     <td>
-                        <a class="btn btn-outline-warning"><span title="Editar" class="fa fa-pencil-alt"></span></a>
+                        <a asp-action="AtualizarEndereco" asp-route-id="@Model.Id" class="btn btn-outline-warning" data-modal="">
+                            <span title="Editar" class="fa fa-pencil-alt"></span>
+                        </a>
                     </td>
                 </tr>
             </tbody>
         </table>
     }
 </div>
+
+<script>
+    AjaxModal();
+</script>
