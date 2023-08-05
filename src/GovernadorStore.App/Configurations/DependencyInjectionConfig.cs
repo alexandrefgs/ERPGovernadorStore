@@ -1,6 +1,8 @@
 ﻿using GovernadorStore.App.Data;
 using GovernadorStore.App.Extensions;
 using GovernadorStore.Business.Interfaces;
+using GovernadorStore.Business.Notificacoes;
+using GovernadorStore.Business.Services;
 using GovernadorStore.Data.Context;
 using GovernadorStore.Data.Repository;
 using Microsoft.AspNetCore.Identity;
@@ -18,6 +20,10 @@ namespace GovernadorStore.App.Configurations
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
             services.AddSingleton<IValidationAttributeAdapterProvider, MoedaValidationAttributeAdapterProvider>();
+
+            services.AddScoped<INotificador, Notificador>();
+            services.AddScoped<IFornecedorService, FornecedorService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
 
             return services;
         }

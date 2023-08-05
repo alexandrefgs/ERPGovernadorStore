@@ -1,10 +1,12 @@
 ﻿using FluentValidation;
+using GovernadorStore.Business.Interfaces;
 using GovernadorStore.Business.Models.Validations.Documentos;
 
 namespace GovernadorStore.Business.Models.Validations
 {
     public class FornecedorValidation : AbstractValidator<Fornecedor>
     {
+        
         public FornecedorValidation()
         {
             RuleFor(f => f.RazaoSocial)

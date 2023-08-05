@@ -95,7 +95,22 @@ function BuscaCep() {
     });
 }
 
-       
+window.onload = function () {
+    var mensagem = document.getElementById('msg_box');
+
+    setTimeout(function () {
+        var opacity = 1;
+        var interval = setInterval(function () {
+            opacity -= 0.05;                            
+            mensagem.style.opacity = opacity;
+            if (opacity <= 0) {
+                mensagem.style.display = 'none';
+                clearInterval(interval);
+            }
+        }, 100);                      
+    }, 2000);                                     
+};
+
       
 
 
