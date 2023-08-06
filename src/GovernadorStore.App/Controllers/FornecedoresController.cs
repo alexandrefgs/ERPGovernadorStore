@@ -3,9 +3,12 @@ using GovernadorStore.App.ViewModels;
 using GovernadorStore.Business.Interfaces;
 using AutoMapper;
 using GovernadorStore.Business.Models;
+using Microsoft.AspNetCore.Authorization;
+using GovernadorStore.App.Extensions;
 
 namespace GovernadorStore.App.Controllers
 {
+    [Authorize]
     [Route("fornecedores")]
     public class FornecedoresController : BaseController
     {
@@ -14,7 +17,7 @@ namespace GovernadorStore.App.Controllers
         private readonly IMapper _mapper;
 
         public FornecedoresController(IFornecedorRepository fornecedorRepository,
-                                      IFornecedorService fornecedorService, 
+                                      IFornecedorService fornecedorService,
                                       IMapper mapper,
                                       INotificador notificador) : base(notificador)
         {
@@ -23,12 +26,14 @@ namespace GovernadorStore.App.Controllers
             _mapper = mapper;
         }
 
+        [AllowAnonymous]
         [Route("lista-de-fornecedores")]
         public async Task<IActionResult> Index()
         {
-              return View(_mapper.Map<IEnumerable<FornecedorViewModel>>(await _fornecedorRepository.ObterTodos()));
+            return View(_mapper.Map<IEnumerable<FornecedorViewModel>>(await _fornecedorRepository.ObterTodos()));
         }
 
+        [AllowAnonymous]
         [Route("dados-do-fornecedor/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
@@ -41,12 +46,14 @@ namespace GovernadorStore.App.Controllers
             return View(fornecedorViewModel);
         }
 
+        [ClaimsAuthorize("Fornecedor", "Adicionar")]
         [Route("novo-fornecedor")]
         public IActionResult Create()
         {
             return View();
         }
 
+        [ClaimsAuthorize("Fornecedor", "Adicionar")]
         [Route("novo-fornecedor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -65,6 +72,7 @@ namespace GovernadorStore.App.Controllers
             
         }
 
+        [ClaimsAuthorize("Fornecedor", "Editar")]
         [Route("editar-fornecedor/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -76,6 +84,7 @@ namespace GovernadorStore.App.Controllers
             return View(fornecedorViewModel);
         }
 
+        [ClaimsAuthorize("Fornecedor", "Editar")]
         [Route("editar-fornecedor/{id:guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -96,6 +105,7 @@ namespace GovernadorStore.App.Controllers
             
         }
 
+        [ClaimsAuthorize("Fornecedor", "Excluir")]
         [Route("excluir-fornecedor/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -108,6 +118,7 @@ namespace GovernadorStore.App.Controllers
             return View(fornecedorViewModel);
         }
 
+        [ClaimsAuthorize("Fornecedor", "Excluir")]
         [Route("excluir-fornecedor/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -121,11 +132,12 @@ namespace GovernadorStore.App.Controllers
 
             if (!OperacaoValida()) return View(fornecedor);
 
-            TempData["Sucesso"] = "Produto excluir com sucesso :)";
+            TempData["Sucesso"] = "Fornecedor excluir com sucesso :)";
 
             return RedirectToAction("Index");
         }
 
+        [AllowAnonymous]
         [Route("obter-endereco-fornecedor/{id:guid}")]
         public async Task<IActionResult> ObterEndereco(Guid id)
         {
@@ -138,6 +150,7 @@ namespace GovernadorStore.App.Controllers
             return PartialView("_DetalhesEndereco", fornecedor);
         }
 
+        [ClaimsAuthorize("Fornecedor", "Editar")]
         [Route("atualizar-endereco-fornecedor/{id:guid}")]
         public async Task<IActionResult> AtualizarEndereco(Guid id)
         {
@@ -149,6 +162,7 @@ namespace GovernadorStore.App.Controllers
             return PartialView("_AtualizarEndereco", new FornecedorViewModel { Endereco = fornecedor.Endereco });
         }
 
+        [ClaimsAuthorize("Fornecedor", "Editar")]
         [Route("atualizar-endereco-fornecedor/{id:guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]

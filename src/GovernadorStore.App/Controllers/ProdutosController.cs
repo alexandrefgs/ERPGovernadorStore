@@ -4,9 +4,12 @@ using GovernadorStore.Business.Interfaces;
 using AutoMapper;
 using GovernadorStore.Business.Models;
 using GovernadorStore.Business.Services;
+using Microsoft.AspNetCore.Authorization;
+using GovernadorStore.App.Extensions;
 
 namespace GovernadorStore.App.Controllers
 {
+    [Authorize]
     [Route("produtos")]
     public class ProdutosController : BaseController
     {
@@ -27,12 +30,14 @@ namespace GovernadorStore.App.Controllers
             _mapper = mapper;
         }
 
+        [AllowAnonymous]
         [Route("lista-de-produtos")]
         public async Task<IActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores()));
         }
 
+        [AllowAnonymous]
         [Route("dados-do-produtos/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
@@ -46,6 +51,7 @@ namespace GovernadorStore.App.Controllers
             return View(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Adicionar")]
         [Route("novo-produtos")]
         public async Task<IActionResult> Create()
         {
@@ -53,6 +59,7 @@ namespace GovernadorStore.App.Controllers
             return View(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Adicionar")]
         [Route("novo-produtos")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -76,6 +83,7 @@ namespace GovernadorStore.App.Controllers
             return RedirectToAction("Index");
         }
 
+        [ClaimsAuthorize("Produto", "Editar")]
         [Route("editar-produtos/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -88,6 +96,7 @@ namespace GovernadorStore.App.Controllers
             return View(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Editar")]
         [Route("editar-produtos/{id:guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -126,6 +135,7 @@ namespace GovernadorStore.App.Controllers
             
         }
 
+        [ClaimsAuthorize("Produto", "Excluir")]
         [Route("excluir-produtos/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -139,6 +149,7 @@ namespace GovernadorStore.App.Controllers
             return View(produto);
         }
 
+        [ClaimsAuthorize("Produto", "Excluir")]
         [Route("excluir-produtos/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
