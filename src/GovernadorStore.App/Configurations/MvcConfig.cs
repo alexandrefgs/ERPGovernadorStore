@@ -1,4 +1,6 @@
-﻿namespace GovernadorStore.App.Configurations
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace GovernadorStore.App.Configurations
 {
     public static class MvcConfig
     {
@@ -17,6 +19,8 @@
                 o.ModelBindingMessageProvider.SetValueIsInvalidAccessor(x => "O valor preenchido é inválido para este campo.");
                 o.ModelBindingMessageProvider.SetValueMustBeANumberAccessor(x => "O campo deve ser numérico.");
                 o.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(x => "Este campo precisa ser preenchido.");
+
+                o.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
             });
 
             return services;
