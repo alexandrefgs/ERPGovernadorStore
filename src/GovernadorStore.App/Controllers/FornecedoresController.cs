@@ -46,14 +46,12 @@ namespace GovernadorStore.App.Controllers
             return View(fornecedorViewModel);
         }
 
-        [ClaimsAuthorize("Fornecedor", "Adicionar")]
         [Route("novo-fornecedor")]
         public IActionResult Create()
         {
             return View();
         }
 
-        [ClaimsAuthorize("Fornecedor", "Adicionar")]
         [Route("novo-fornecedor")]
         [HttpPost]
         public async Task<IActionResult> Create(FornecedorViewModel fornecedorViewModel)
@@ -71,7 +69,6 @@ namespace GovernadorStore.App.Controllers
             
         }
 
-        [ClaimsAuthorize("Fornecedor", "Editar")]
         [Route("editar-fornecedor/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -83,7 +80,6 @@ namespace GovernadorStore.App.Controllers
             return View(fornecedorViewModel);
         }
 
-        [ClaimsAuthorize("Fornecedor", "Editar")]
         [Route("editar-fornecedor/{id:guid}")]
         [HttpPost]
         public async Task<IActionResult> Edit(Guid id, FornecedorViewModel fornecedorViewModel)
@@ -103,7 +99,6 @@ namespace GovernadorStore.App.Controllers
             
         }
 
-        [ClaimsAuthorize("Fornecedor", "Excluir")]
         [Route("excluir-fornecedor/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -116,7 +111,6 @@ namespace GovernadorStore.App.Controllers
             return View(fornecedorViewModel);
         }
 
-        [ClaimsAuthorize("Fornecedor", "Excluir")]
         [Route("excluir-fornecedor/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
@@ -147,7 +141,6 @@ namespace GovernadorStore.App.Controllers
             return PartialView("_DetalhesEndereco", fornecedor);
         }
 
-        [ClaimsAuthorize("Fornecedor", "Editar")]
         [Route("atualizar-endereco-fornecedor/{id:guid}")]
         public async Task<IActionResult> AtualizarEndereco(Guid id)
         {
@@ -159,7 +152,6 @@ namespace GovernadorStore.App.Controllers
             return PartialView("_AtualizarEndereco", new FornecedorViewModel { Endereco = fornecedor.Endereco });
         }
 
-        [ClaimsAuthorize("Fornecedor", "Editar")]
         [Route("atualizar-endereco-fornecedor/{id:guid}")]
         [HttpPost]
         public async Task<IActionResult> AtualizarEndereco(FornecedorViewModel fornecedorViewModel)

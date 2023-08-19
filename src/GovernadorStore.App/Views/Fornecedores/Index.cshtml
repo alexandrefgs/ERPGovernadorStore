@@ -8,7 +8,7 @@
 <h1>@ViewData["Title"]</h1>
 <hr />
 <vc:summary></vc:summary>
-<p supress-by-claim-name="Fornecedor" supress-by-claim-value="Adicionar">
+<p>
     <a class="btn btn-outline-success" asp-action="Create">Novo Fornecedor</a>
 </p>
 <table class="table table-bordered table-hover">
@@ -40,8 +40,8 @@
             </td>
             <td class="text-right">
                 <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id"><span class="fa fa-search"></span></a>
-                <a class="btn btn-outline-warning" supress-by-claim-name="Fornecedor" supress-by-claim-value="Editar" asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-pencil-alt"></span></a>
-                <a class="btn btn-outline-danger" supress-by-claim-name="Fornecedor" supress-by-claim-value="Excluir" asp-action="Delete" asp-route-id="@item.Id"><span class="fa fa-trash"></span></a>
+                <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-pencil-alt"></span></a>
+                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id"><span class="fa fa-trash"></span></a>
             </td>
         </tr>
 }

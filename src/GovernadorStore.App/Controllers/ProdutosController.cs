@@ -51,7 +51,6 @@ namespace GovernadorStore.App.Controllers
             return View(produtoViewModel);
         }
 
-        [ClaimsAuthorize("Produto", "Adicionar")]
         [Route("novo-produtos")]
         public async Task<IActionResult> Create()
         {
@@ -59,7 +58,6 @@ namespace GovernadorStore.App.Controllers
             return View(produtoViewModel);
         }
 
-        [ClaimsAuthorize("Produto", "Adicionar")]
         [Route("novo-produtos")]
         [HttpPost]
         public async Task<IActionResult> Create(ProdutoViewModel produtoViewModel)
@@ -82,7 +80,6 @@ namespace GovernadorStore.App.Controllers
             return RedirectToAction("Index");
         }
 
-        [ClaimsAuthorize("Produto", "Editar")]
         [Route("editar-produtos/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -95,7 +92,6 @@ namespace GovernadorStore.App.Controllers
             return View(produtoViewModel);
         }
 
-        [ClaimsAuthorize("Produto", "Editar")]
         [Route("editar-produtos/{id:guid}")]
         [HttpPost]
         public async Task<IActionResult> Edit(Guid id, ProdutoViewModel produtoViewModel)
@@ -133,7 +129,6 @@ namespace GovernadorStore.App.Controllers
             
         }
 
-        [ClaimsAuthorize("Produto", "Excluir")]
         [Route("excluir-produtos/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -147,7 +142,6 @@ namespace GovernadorStore.App.Controllers
             return View(produto);
         }
 
-        [ClaimsAuthorize("Produto", "Excluir")]
         [Route("excluir-produtos/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
